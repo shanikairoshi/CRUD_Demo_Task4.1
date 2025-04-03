@@ -37,24 +37,6 @@ public class MainActivity extends AppCompatActivity {
         DB = new DBHelper(this); //8
         //9
 
-        insert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String nameTXT = name.getText().toString();
-                String contactTXT = contact.getText().toString();
-                String dobTXT = dob.getText().toString();
-
-                Boolean checkinsertdata = DB.insertuserdata(nameTXT, contactTXT, dobTXT);
-
-                if (checkinsertdata == true) {
-                    Toast.makeText(MainActivity.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "New Entry Not Inserted", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
         // Setting an OnClickListener for the 'insert' button
         insert.setOnClickListener(new View.OnClickListener() {
             // This method is called when the 'insert' button is clicked
